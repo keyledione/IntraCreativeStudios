@@ -1,0 +1,179 @@
+/* ==================================
+   WHY CHOOSE US RESPONSIVE
+================================== */
+
+@media (max-width: 992px) {
+  .why-us-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .why-us-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==================================
+   PROCESS RESPONSIVE
+================================== */
+
+@media (max-width: 768px) {
+  .process-wrapper::before {
+    left: 25px;
+  }
+
+  .process-card {
+    gap: 20px;
+  }
+
+  .process-number {
+    min-width: 55px;
+
+    height: 55px;
+
+    font-size: 18px;
+  }
+
+  .process-content {
+    padding: 25px 20px;
+  }
+
+  .process-content h3 {
+    font-size: 20px;
+  }
+}
+
+/* ==================================
+   TESTIMONIALS RESPONSIVE
+================================== */
+
+@media (max-width: 992px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ==================================
+   CONTACT RESPONSIVE
+================================== */
+
+@media (max-width: 992px) {
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .contact-info h2 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-form-wrapper {
+    padding: 25px;
+  }
+
+  .contact-info h2 {
+    font-size: 30px;
+  }
+}
+
+/* ==================================
+   FOOTER RESPONSIVE
+================================== */
+
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
+  }
+
+  .footer {
+    padding: 60px 0 25px;
+  }
+}
+
+/* ==================================
+   SUCCESS PAGE RESPONSIVE
+================================== */
+
+@media (max-width: 768px) {
+  .success-card {
+    padding: 40px 25px;
+  }
+
+  .success-card h1 {
+    font-size: 32px;
+  }
+
+  .success-card p {
+    font-size: 16px;
+  }
+
+  .success-icon {
+    width: 80px;
+
+    height: 80px;
+
+    font-size: 40px;
+  }
+}
+
+/* ==========================================
+   LOADER RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+  .loader-title {
+    font-size: 2.8rem;
+
+    letter-spacing: 5px;
+  }
+
+  .loader-subtitle {
+    font-size: 1rem;
+  }
+
+  .loader-spinner {
+    width: 60px;
+
+    height: 60px;
+  }
+}
+
+/* ==========================================
+   LIGHTBOX RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+  #lightbox {
+    padding: 20px;
+  }
+
+  #lightbox-image {
+    max-width: 100%;
+
+    max-height: 80vh;
+  }
+
+  #lightbox-close {
+    top: 15px;
+
+    right: 20px;
+
+    font-size: 36px;
+  }
+}
