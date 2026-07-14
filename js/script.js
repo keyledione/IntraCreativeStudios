@@ -139,7 +139,9 @@ window.addEventListener("scroll", function () {
 ================================== */
 
 const contactForm = document.getElementById("contact-form");
-const submitButton = document.getElementById("submit-button");
+<button id="submit-button" type="submit">
+  Send Message
+</button>;
 
 if (contactForm && submitButton) {
   contactForm.addEventListener("submit", function () {
@@ -156,13 +158,12 @@ if (contactForm && submitButton) {
 window.addEventListener("load", function () {
   const loader = document.getElementById("loader");
 
-  setTimeout(function () {
-    loader.classList.add("loader-hidden");
-  }, 500);
+  if (loader) {
+    setTimeout(function () {
+      loader.classList.add("loader-hidden");
+    }, 500);
+  }
 });
-window.addEventListener("scroll", revealOnScroll);
-
-revealOnScroll();
 
 /* ==================================
    IMAGE LIGHTBOX
@@ -172,53 +173,43 @@ const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-image");
 const lightboxClose = document.getElementById("lightbox-close");
 
-/* Find every image on the page */
-const galleryImages = document.querySelectorAll("img");
+if (lightbox && lightboxImage && lightboxClose) {
+  const galleryImages = document.querySelectorAll("img");
 
-galleryImages.forEach(function (image) {
-  image.addEventListener("click", function () {
-    /* Ignore logo images and icons */
-    if (
-      image.closest("header") ||
-      image.closest("nav") ||
-      image.closest("footer")
-    ) {
-      return;
-    }
+  galleryImages.forEach(function (image) {
+    image.addEventListener("click", function () {
+      if (
+        image.closest("header") ||
+        image.closest("nav") ||
+        image.closest("footer")
+      ) {
+        return;
+      }
 
-    lightbox.classList.add("active");
+      lightbox.classList.add("active");
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
 
-    lightboxImage.src = image.src;
-    lightboxImage.alt = image.alt;
-
-    document.body.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    });
   });
-});
 
-/* Close Button */
-
-lightboxClose.addEventListener("click", function () {
-  lightbox.classList.remove("active");
-
-  document.body.style.overflow = "";
-});
-
-/* Click Outside Image */
-
-lightbox.addEventListener("click", function (event) {
-  if (event.target === lightbox) {
+  lightboxClose.addEventListener("click", function () {
     lightbox.classList.remove("active");
-
     document.body.style.overflow = "";
-  }
-});
+  });
 
-/* ESC Key */
+  lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) {
+      lightbox.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
 
-document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape") {
-    lightbox.classList.remove("active");
-
-    document.body.style.overflow = "";
-  }
-});
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      lightbox.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
+}
