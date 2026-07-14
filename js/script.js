@@ -139,9 +139,7 @@ window.addEventListener("scroll", function () {
 ================================== */
 
 const contactForm = document.getElementById("contact-form");
-<button id="submit-button" type="submit">
-  Send Message
-</button>;
+const submitButton = document.getElementById("submit-button");
 
 if (contactForm && submitButton) {
   contactForm.addEventListener("submit", function () {
