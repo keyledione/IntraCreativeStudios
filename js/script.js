@@ -158,7 +158,7 @@ window.addEventListener("load", function () {
 
   setTimeout(function () {
     loader.classList.add("loader-hidden");
-  }, 1200);
+  }, 500);
 });
 window.addEventListener("scroll", revealOnScroll);
 
