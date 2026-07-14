@@ -114,13 +114,19 @@ nav .container {
 
 .logo a {
   display: flex;
-  flex-direction: column;
-  color: var(--text-color);
-  font-family: var(--heading-font);
-  font-weight: 700;
-  font-size: 1.4rem;
-  line-height: 1;
+  align-items: center;
   transition: var(--transition);
+}
+
+.site-logo {
+  height: 60px;
+  width: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.site-logo:hover {
+  transform: scale(1.05);
 }
 
 .logo span {
