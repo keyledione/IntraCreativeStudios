@@ -60,10 +60,12 @@ filterButtons.forEach((button) => {
 });
 
 // =====================================
-// Portfolio Gallery Switcher (Inner Pages)
+// Portfolio Gallery Switcher
+// Inner Pages
 // =====================================
 
 const portfolioCards = document.querySelectorAll(".portfolio-service-card");
+
 const galleries = document.querySelectorAll(".portfolio-gallery");
 
 portfolioCards.forEach((card) => {
@@ -72,36 +74,44 @@ portfolioCards.forEach((card) => {
 
     const galleryId = card.dataset.gallery;
 
+    // Find the gallery BEFORE using it
+    const selectedGallery = document.getElementById(galleryId);
+
+    // If the gallery doesn't exist, stop here
+    if (!selectedGallery) {
+      console.warn(`Gallery with ID "${galleryId}" was not found.`);
+      return;
+    }
+
+    // Remove active state from all cards
     portfolioCards.forEach((item) => {
       item.classList.remove("active");
     });
 
+    // Hide all galleries
     galleries.forEach((gallery) => {
       gallery.classList.remove("active-gallery");
     });
 
-    setTimeout(() => {
-      selectedGallery.classList.add("active-gallery");
-    }, 250);
-
+    // Activate selected card
     card.classList.add("active");
 
-    const selectedGallery = document.getElementById(galleryId);
+    // Show selected gallery
+    selectedGallery.classList.add("active-gallery");
 
-    if (selectedGallery) {
-      selectedGallery.classList.add("active-gallery");
-
+    // Scroll to selected gallery
+    setTimeout(() => {
       window.scrollTo({
         top: selectedGallery.offsetTop - 110,
-
         behavior: "smooth",
       });
-    }
+    }, 100);
   });
 });
-/* ==================================
-   SCROLL REVEAL
-================================== */
+
+// =====================================
+// SCROLL REVEAL
+// =====================================
 
 const revealElements = document.querySelectorAll(".reveal");
 
@@ -116,12 +126,20 @@ function revealOnScroll() {
     }
   });
 }
-/* ==================================
-   SCROLL PROGRESS BAR
-================================== */
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
+
+// =====================================
+// SCROLL PROGRESS BAR
+// =====================================
 
 window.addEventListener("scroll", function () {
   const scrollProgress = document.querySelector(".scroll-progress");
+
+  // Stop if this element doesn't exist on the page
+  if (!scrollProgress) return;
 
   const scrollTop = document.documentElement.scrollTop;
 
@@ -129,16 +147,20 @@ window.addEventListener("scroll", function () {
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
 
+  // Avoid division by zero
+  if (scrollHeight <= 0) return;
+
   const scrollPercentage = (scrollTop / scrollHeight) * 100;
 
   scrollProgress.style.width = scrollPercentage + "%";
 });
 
-/* ==================================
-   CONTACT FORM SUBMIT BUTTON
-================================== */
+// =====================================
+// CONTACT FORM SUBMIT BUTTON
+// =====================================
 
 const contactForm = document.getElementById("contact-form");
+
 const submitButton = document.getElementById("submit-button");
 
 if (contactForm && submitButton) {
@@ -149,9 +171,9 @@ if (contactForm && submitButton) {
   });
 }
 
-/* ==========================================
-   WEBSITE LOADER
-========================================== */
+// =====================================
+// WEBSITE LOADER
+// =====================================
 
 window.addEventListener("load", function () {
   const loader = document.getElementById("loader");
@@ -163,50 +185,58 @@ window.addEventListener("load", function () {
   }
 });
 
-/* ==================================
-   IMAGE LIGHTBOX
-================================== */
+// =====================================
+// IMAGE LIGHTBOX
+// =====================================
 
 const lightbox = document.getElementById("lightbox");
+
 const lightboxImage = document.getElementById("lightbox-image");
+
 const lightboxClose = document.getElementById("lightbox-close");
 
+// Only run lightbox code if all required
+// elements exist on the page
+
 if (lightbox && lightboxImage && lightboxClose) {
-  const galleryImages = document.querySelectorAll("img");
+  const galleryImages = document.querySelectorAll(".gallery-item img");
 
   galleryImages.forEach(function (image) {
     image.addEventListener("click", function () {
-      if (
-        image.closest("header") ||
-        image.closest("nav") ||
-        image.closest("footer")
-      ) {
-        return;
-      }
-
       lightbox.classList.add("active");
+
       lightboxImage.src = image.src;
+
       lightboxImage.alt = image.alt;
 
       document.body.style.overflow = "hidden";
     });
   });
 
+  // Close button
+
   lightboxClose.addEventListener("click", function () {
     lightbox.classList.remove("active");
+
     document.body.style.overflow = "";
   });
+
+  // Click outside image
 
   lightbox.addEventListener("click", function (event) {
     if (event.target === lightbox) {
       lightbox.classList.remove("active");
+
       document.body.style.overflow = "";
     }
   });
 
+  // Escape key
+
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
       lightbox.classList.remove("active");
+
       document.body.style.overflow = "";
     }
   });
