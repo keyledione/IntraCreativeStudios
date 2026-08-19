@@ -1,88 +1,65 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Character Encoding -->
     <meta charset="UTF-8" />
-
-    <!-- Responsive Design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Browser Title -->
     <title>Message Sent | Intra Creative Studios</title>
-
-    <!-- Main Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Animation Styles -->
-    <link rel="stylesheet" href="css/animations.css" />
-
-    <!-- Responsive Styles -->
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+    <style>
+      .success-page {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .success-page .icon {
+        font-size: 4rem;
+        color: #2ecc71;
+        margin-bottom: 24px;
+      }
+      .success-page h1 {
+        font-family: "Fraunces", serif;
+        font-weight: 340;
+        font-size: 2.4rem;
+        margin-bottom: 16px;
+      }
+      .success-page p {
+        color: var(--text-secondary);
+        max-width: 36ch;
+        margin: 0 auto 32px;
+        font-size: 1.1rem;
+      }
+      .success-page .btn {
+        margin: 0 auto;
+      }
+    </style>
   </head>
-
   <body>
-    <!-- ==================================
-     WEBSITE LOADER
-================================== -->
-
-    <div id="loader">
-      <div class="loader-content">
-        <img
-          src="assets/images/logo.jpg"
-          alt="Intra Creative Studios Logo"
-          class="loader-logo"
-        />
-
-        <div class="loader-spinner"></div>
-
-        <p class="loader-loading-text">Loading...</p>
+    <div class="success-page">
+      <div>
+        <div class="icon"><i class="fas fa-check-circle"></i></div>
+        <h1>Message Sent Successfully!</h1>
+        <p>
+          Thank you for reaching out. We'll get back to you within 24 hours.
+        </p>
+        <a href="index.html" class="btn btn-primary"
+          >Return Home <i class="fas fa-arrow-right"></i
+        ></a>
       </div>
     </div>
-
-    <!-- =========================
-        HEADER
-========================= -->
-
-    <header>
-      <nav>
-        <div class="container">
-          <div class="logo">
-            <a href="index.html">
-              <img
-                src="assets/images/logo.jpg"
-                alt="Intra Creative Studios Logo"
-                class="site-logo"
-              />
-            </a>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- ===============================
-         SUCCESS PAGE
-    ================================ -->
-
-    <section class="success-page">
-      <div class="success-card">
-        <div class="success-icon">✓</div>
-
-        <h1>Message Sent Successfully</h1>
-
-        <p>
-          Thank you for contacting
-          <strong>Intra Creative Studios.</strong>
-
-          <br /><br />
-
-          Your message has been received successfully. We appreciate your
-          interest in our services and will respond to you as soon as possible.
-        </p>
-
-        <a href="index.html" class="success-button"> Return to Homepage </a>
-      </div>
-    </section>
-
-    <script src="js/script.js"></script>
   </body>
 </html>

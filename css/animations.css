@@ -1,50 +1,193 @@
-/*=====================================================
-        PORTFOLIO ANIMATIONS
-=====================================================*/
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
 
-.portfolio-item {
-  animation: portfolioReveal 0.8s ease forwards;
-}
-
-@keyframes portfolioReveal {
+/* Fade In Up */
+@keyframes fadeInUp {
   from {
     opacity: 0;
-
-    transform: translateY(40px);
+    transform: translateY(30px);
   }
-
   to {
     opacity: 1;
-
     transform: translateY(0);
   }
 }
 
-.portfolio-item:nth-child(2) {
+.fade-in-up {
+  animation: fadeInUp 0.8s var(--ease) forwards;
+}
+
+/* Scale In */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.6s var(--ease) forwards;
+}
+
+/* Slide In Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s var(--ease) forwards;
+}
+
+/* Slide In Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s var(--ease) forwards;
+}
+
+/* Pulse */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Float */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Shimmer (loading skeleton) */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--border-color) 25%,
+    var(--ink-soft) 50%,
+    var(--border-color) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Rotate */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: rotate 10s linear infinite;
+}
+
+/* Bounce */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s var(--ease) forwards;
+}
+
+/* Delay classes */
+.delay-1 {
   animation-delay: 0.1s;
 }
-
-.portfolio-item:nth-child(3) {
+.delay-2 {
   animation-delay: 0.2s;
 }
-
-.portfolio-item:nth-child(4) {
+.delay-3 {
   animation-delay: 0.3s;
 }
-/* ==================================
-   SCROLL REVEAL ANIMATION
-================================== */
-
-.reveal {
-  opacity: 0;
-
-  transform: translateY(40px);
-
-  transition: all 0.8s ease;
+.delay-4 {
+  animation-delay: 0.4s;
 }
-
-.reveal.active {
-  opacity: 1;
-
-  transform: translateY(0);
+.delay-5 {
+  animation-delay: 0.5s;
+}
+.delay-6 {
+  animation-delay: 0.6s;
+}
+.delay-7 {
+  animation-delay: 0.7s;
+}
+.delay-8 {
+  animation-delay: 0.8s;
+}
+.delay-9 {
+  animation-delay: 0.9s;
+}
+.delay-10 {
+  animation-delay: 1s;
 }

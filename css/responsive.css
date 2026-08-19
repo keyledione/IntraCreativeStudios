@@ -1,179 +1,314 @@
-/* ==================================
-   WHY CHOOSE US RESPONSIVE
-================================== */
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
 
-@media (max-width: 992px) {
-  .why-us-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* Mobile First - Default styles are for mobile */
+
+/* ============================================================
+   TABLET (768px and up)
+   ============================================================ */
+@media (min-width: 768px) {
+  /* Header */
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    flex-direction: row;
+    padding: 0;
+    border-left: none;
+    gap: clamp(20px, 3vw, 40px);
+  }
+
+  .nav-links .nav-cta {
+    display: none;
+  }
+
+  .nav-cta-desktop {
+    display: block;
+  }
+
+  .nav-cta-mobile {
+    display: none;
+  }
+
+  /* Hero Meta */
+  .hero-meta {
+    gap: clamp(28px, 6vw, 72px);
+  }
+
+  .hero-meta div {
+    padding-left: 16px;
+  }
+
+  /* Services Grid */
+  .svc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Portfolio Grid */
+  .pf-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Why Grid */
+  .why-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Timeline */
+  .timeline {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .timeline::before {
+    display: block;
+  }
+
+  .tl-step {
+    margin-bottom: 0;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  /* Contact */
+  #contact .grid {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+
+  /* Form */
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Footer */
+  .footer-top {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  }
+
+  /* Modal */
+  .modal {
+    padding: 48px;
+  }
+
+  /* Portfolio items (sub-pages) */
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr !important;
   }
 }
 
-@media (max-width: 600px) {
-  .why-us-grid {
-    grid-template-columns: 1fr;
+/* ============================================================
+   DESKTOP (1024px and up)
+   ============================================================ */
+@media (min-width: 1024px) {
+  /* Hero */
+  h1.headline {
+    font-size: clamp(3.5rem, 7.2vw, 6.4rem);
+  }
+
+  /* Services Grid - can be 3 columns on large screens if needed */
+  .svc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Portfolio Grid - 2 columns on desktop */
+  .pf-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
-/* ==================================
-   PROCESS RESPONSIVE
-================================== */
 
-@media (max-width: 768px) {
-  .process-wrapper::before {
-    left: 25px;
+/* ============================================================
+   LARGE DESKTOP (1440px and up)
+   ============================================================ */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* ============================================================
+   MOBILE (max-width: 767px)
+   ============================================================ */
+@media (max-width: 767px) {
+  /* Header - Mobile Nav */
+  .hamburger {
+    display: flex;
   }
 
-  .process-card {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--bg-secondary);
+    flex-direction: column;
+    padding: 80px 30px 30px;
+    transition: right 0.4s var(--ease);
+    border-left: 1px solid var(--border-color);
     gap: 20px;
+    align-items: flex-start;
   }
 
-  .process-number {
-    min-width: 55px;
-
-    height: 55px;
-
-    font-size: 18px;
+  .nav-links.active {
+    right: 0;
   }
 
-  .process-content {
-    padding: 25px 20px;
+  .nav-links .nav-cta {
+    display: block;
+    margin-top: 10px;
   }
 
-  .process-content h3 {
-    font-size: 20px;
+  .nav-cta-desktop {
+    display: none;
   }
-}
 
-/* ==================================
-   TESTIMONIALS RESPONSIVE
-================================== */
-
-@media (max-width: 992px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
+  /* Hero */
+  .hero-meta {
+    gap: 16px;
   }
-}
 
-@media (max-width: 600px) {
-  .testimonials-grid {
+  .hero-meta div {
+    padding-left: 12px;
+  }
+
+  .hero-meta .num {
+    font-size: 1.4rem;
+  }
+
+  /* Section padding */
+  section {
+    padding: clamp(48px, 10vw, 80px) 0;
+  }
+
+  /* Services */
+  .svc-grid {
     grid-template-columns: 1fr;
   }
-}
-/* ==================================
-   CONTACT RESPONSIVE
-================================== */
 
-@media (max-width: 992px) {
-  .contact-wrapper {
+  .svc-card {
+    padding: 24px;
+  }
+
+  /* Portfolio */
+  .pf-grid {
     grid-template-columns: 1fr;
-
-    gap: 50px;
   }
 
-  .contact-info h2 {
-    font-size: 35px;
-  }
-}
-
-@media (max-width: 600px) {
-  .contact-form-wrapper {
-    padding: 25px;
+  .pf-card {
+    padding: 24px 20px;
   }
 
-  .contact-info h2 {
-    font-size: 30px;
-  }
-}
-
-/* ==================================
-   FOOTER RESPONSIVE
-================================== */
-
-@media (max-width: 992px) {
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .footer-grid {
+  /* Why */
+  .why-grid {
     grid-template-columns: 1fr;
-
-    gap: 35px;
   }
 
-  .footer {
-    padding: 60px 0 25px;
-  }
-}
-
-/* ==================================
-   SUCCESS PAGE RESPONSIVE
-================================== */
-
-@media (max-width: 768px) {
-  .success-card {
-    padding: 40px 25px;
+  /* Timeline */
+  .timeline {
+    grid-template-columns: 1fr;
   }
 
-  .success-card h1 {
-    font-size: 32px;
+  .tl-step {
+    border-left: 1px solid var(--border-color);
+    padding-left: 20px;
+    margin-bottom: 24px;
   }
 
-  .success-card p {
-    font-size: 16px;
+  /* Contact */
+  #contact .grid {
+    grid-template-columns: 1fr;
   }
 
-  .success-icon {
-    width: 80px;
-
-    height: 80px;
-
-    font-size: 40px;
-  }
-}
-
-/* ==========================================
-   LOADER RESPONSIVE
-========================================== */
-
-@media (max-width: 768px) {
-  .loader-title {
-    font-size: 2.8rem;
-
-    letter-spacing: 5px;
+  /* Form */
+  .form-row {
+    grid-template-columns: 1fr;
   }
 
-  .loader-subtitle {
+  /* Modal */
+  .modal {
+    padding: 30px 20px;
+  }
+
+  /* Footer */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .typing-line {
     font-size: 1rem;
   }
 
-  .loader-spinner {
-    width: 60px;
+  .foot-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
 
-    height: 60px;
+  /* Testimonial */
+  .testimonial-slider {
+    padding: 24px;
+  }
+
+  .slide blockquote {
+    font-size: 1rem;
+  }
+
+  /* Commitment */
+  .commit {
+    padding: 24px;
+  }
+
+  /* Portfolio items (sub-pages) */
+  .portfolio-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .portfolio-item div[style*="height:300px"] {
+    height: 200px !important;
   }
 }
 
-/* ==========================================
-   LIGHTBOX RESPONSIVE
-========================================== */
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
-@media (max-width: 768px) {
-  #lightbox {
-    padding: 20px;
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  header,
+  footer,
+  #to-top,
+  #cursor-glow,
+  .grain,
+  .mesh {
+    display: none !important;
   }
 
-  #lightbox-image {
-    max-width: 100%;
-
-    max-height: 80vh;
+  section {
+    padding: 40px 0 !important;
   }
 
-  #lightbox-close {
-    top: 15px;
+  body {
+    background: white !important;
+    color: black !important;
+  }
 
-    right: 20px;
-
-    font-size: 36px;
+  .container {
+    max-width: 100% !important;
+    padding: 0 20px !important;
   }
 }

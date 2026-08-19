@@ -2,540 +2,450 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <title>Videography | Intra Creative Studios</title>
     <meta
       name="description"
-      content="Intra Creative Studios Brand Identity and Logo Design portfolio."
+      content="Professional videography services including promotional videos, cinematic content, and drone visuals."
     />
-    <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
-
-    <title>Brand Identity | Intra Creative Studios</title>
-
-    <!-- Google Fonts -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-
-    <!-- CSS -->
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
-
     <link rel="stylesheet" href="css/animations.css" />
-
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
   </head>
-
   <body>
-    <!-- ==================================
-     WEBSITE LOADER
-================================== -->
+    <div id="scroll-progress"></div>
 
-    <div id="loader">
-      <div class="loader-content">
-        <img
-          src="assets/images/logo.jpg"
-          alt="Intra Creative Studios Logo"
-          class="loader-logo"
-        />
-
-        <div class="loader-spinner"></div>
-
-        <p class="loader-loading-text">Loading...</p>
-      </div>
-    </div>
-    <!-- =========================
-        HEADER
-========================= -->
-
-    <header>
-      <nav>
-        <div class="container">
-          <div class="logo">
-            <a href="index.html">
-              <img
-                src="assets/images/logo.jpg"
-                alt="Intra Creative Studios Logo"
-                class="site-logo"
-              />
-            </a>
-          </div>
-
-          <ul class="nav-links">
-            <li>
-              <a href="index.html#hero"> Home </a>
-            </li>
-
-            <li>
-              <a href="index.html#about"> About </a>
-            </li>
-
-            <li>
-              <a href="index.html#services"> Services </a>
-            </li>
-
-            <li>
-              <a href="index.html#portfolio"> Portfolio </a>
-            </li>
-
-            <li>
-              <a href="index.html#contact"> Contact </a>
-            </li>
-          </ul>
-
-          <a href="index.html#contact" class="btn-primary"> Start a Project </a>
+    <header id="site-header">
+      <nav class="container">
+        <a href="index.html" class="logo">
+          <img
+            src="assets/images/branding/logos/logo.png"
+            alt="Intra Creative Studios"
+          />
+          <span>Intra Creative</span>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="branding.html">Branding</a></li>
+          <li><a href="graphic-design.html">Graphic Design</a></li>
+          <li><a href="photography.html">Photography</a></li>
+          <li><a href="videography.html" class="active">Videography</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li class="nav-cta nav-cta-mobile">
+            <button class="btn btn-primary" id="bookCallBtn">
+              Book a Call
+            </button>
+          </li>
+        </ul>
+        <div style="display: flex; align-items: center; gap: 12px">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+          >
+            <span class="icon-wrap"><i class="fas fa-sun"></i></span>
+            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+            <span class="icon-wrap"><i class="fas fa-moon"></i></span>
+          </button>
+          <button
+            class="btn btn-primary nav-cta-desktop"
+            id="bookCallBtnDesktop"
+          >
+            Book a Call
+          </button>
         </div>
       </nav>
     </header>
 
-    <main>
-      <!-- =========================
-VIDEOGRAPHY HERO
-========================= -->
+    <section
+      class="page-hero"
+      style="
+        padding-top: 160px;
+        padding-bottom: 80px;
+        background: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-color);
+      "
+    >
+      <div class="container">
+        <p class="eyebrow">Videography</p>
+        <h1
+          style="
+            font-family: &quot;Fraunces&quot;, serif;
+            font-weight: 340;
+            font-size: clamp(2.4rem, 5vw, 4rem);
+            line-height: 1.05;
+            margin: 16px 0 20px;
+            max-width: 16ch;
+          "
+        >
+          Cinematic visuals that
+          <em style="color: var(--accent); font-style: italic"
+            >move audiences.</em
+          >
+        </h1>
+        <p
+          style="
+            color: var(--text-secondary);
+            max-width: 48ch;
+            font-size: 1.1rem;
+          "
+        >
+          From promotional videos to cinematic content and drone footage, we
+          create visuals that captivate and inspire.
+        </p>
+      </div>
+    </section>
 
-      <section class="portfolio-page-hero">
-        <div class="container">
-          <p class="section-tag">VIDEOGRAPHY</p>
-
-          <h1>Bringing Stories to Life Through Motion.</h1>
-
-          <p>
-            From cinematic productions and aerial footage to promotional
-            campaigns and event coverage, we create compelling videos that
-            inspire, engage and leave lasting impressions.
-          </p>
+    <!-- ============================================================
+    VIDEO GALLERY GRID - 3 Blank Placeholders
+    ============================================================ -->
+    <section style="padding: 80px 0">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <p class="eyebrow">Coming Soon</p>
+          <h2>Videography projects.</h2>
+          <p>We're working on some amazing video content. Check back soon!</p>
         </div>
-      </section>
 
-      <!-- =========================
-VIDEOGRAPHY SERVICES
-========================= -->
-
-      <section class="portfolio-services">
-        <div class="container">
-          <div class="portfolio-service-grid">
-            <!-- Cinematic -->
+        <div
+          class="video-grid"
+          style="
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-top: 40px;
+          "
+        >
+          <!-- Video Placeholder 1 -->
+          <div
+            class="video-item"
+            style="
+              background: var(--bg-secondary);
+              border-radius: 18px;
+              border: 1px solid var(--border-color);
+              overflow: hidden;
+              transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+            "
+          >
             <div
-              class="portfolio-service-card active"
-              data-gallery="cinematic-gallery"
+              style="
+                width: 100%;
+                height: 280px;
+                background: linear-gradient(
+                  135deg,
+                  var(--ink-soft),
+                  var(--ink)
+                );
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: var(--text-secondary);
+              "
             >
-              <div class="category-icon">🎬</div>
-
-              <h3>Cinematic Videos</h3>
-
-              <p>
-                Creative films with cinematic storytelling, professional editing
-                and stunning visuals.
+              <div style="font-size: 4rem; margin-bottom: 16px; opacity: 0.3">
+                <i class="fas fa-video"></i>
+              </div>
+              <div
+                style="
+                  width: 80px;
+                  height: 80px;
+                  border-radius: 50%;
+                  border: 3px solid var(--accent);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.8rem;
+                  color: var(--accent);
+                "
+              >
+                <i class="fas fa-play"></i>
+              </div>
+              <p
+                style="
+                  margin-top: 20px;
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 0.8rem;
+                  letter-spacing: 0.1em;
+                  color: var(--paper-faint);
+                "
+              >
+                COMING SOON
               </p>
-
-              <a href="#cinematic-gallery" class="portfolio-btn">
-                View Projects →
-              </a>
             </div>
-
-            <!-- Drone -->
-            <div class="portfolio-service-card" data-gallery="drone-gallery">
-              <div class="category-icon">🚁</div>
-
-              <h3>Drone Videography</h3>
-
-              <p>
-                Breathtaking aerial footage for tourism, businesses, events and
-                real estate.
-              </p>
-
-              <a href="#drone-gallery" class="portfolio-btn">
-                View Projects →
-              </a>
-            </div>
-
-            <!-- Events -->
-            <div class="portfolio-service-card" data-gallery="events-gallery">
-              <div class="category-icon">🎉</div>
-
-              <h3>Event Videography</h3>
-
-              <p>
-                Weddings, conferences, concerts and celebrations captured
-                beautifully.
-              </p>
-
-              <a href="#events-gallery" class="portfolio-btn">
-                View Projects →
-              </a>
-            </div>
-
-            <!-- Promotional -->
-            <div
-              class="portfolio-service-card"
-              data-gallery="promotional-gallery"
-            >
-              <div class="category-icon">📢</div>
-
-              <h3>Promotional Videos</h3>
-
-              <p>
-                Promotional videos crafted to showcase brands, products and
+            <div style="padding: 20px 24px">
+              <h3
+                style="
+                  font-family: &quot;Fraunces&quot;, serif;
+                  font-size: 1.1rem;
+                  font-weight: 500;
+                "
+              >
+                Promotional Video
+              </h3>
+              <p
+                style="
+                  color: var(--text-secondary);
+                  margin: 6px 0 0;
+                  font-size: 0.9rem;
+                "
+              >
+                High-quality promotional video showcasing a brand's products and
                 services.
               </p>
-
-              <a href="#promotional-gallery" class="portfolio-btn">
-                View Projects →
-              </a>
+              <span
+                style="
+                  display: inline-block;
+                  background: var(--border-color);
+                  padding: 4px 12px;
+                  border-radius: 100px;
+                  font-size: 0.72rem;
+                  margin-top: 12px;
+                  color: var(--text-secondary);
+                "
+                >Coming Soon</span
+              >
             </div>
           </div>
-        </div>
-      </section>
-      <!-- =========================
-CINEMATIC VIDEOS GALLERY
-========================= -->
 
-      <section id="cinematic-gallery" class="portfolio-gallery active-gallery">
-        <div class="container">
-          <div class="section-header">
-            <p class="section-tag">CINEMATIC VIDEOS</p>
-
-            <h2>Stories Told Through Cinematic Motion</h2>
-
-            <p>
-              Every frame is carefully crafted to create emotion, atmosphere and
-              unforgettable visual experiences through cinematic filmmaking.
-            </p>
-
-            <!-- ADD THIS -->
-            <p class="gallery-hint">Hover over a project to preview.</p>
-          </div>
-
-          <div class="gallery-grid">
-            <!-- Cinematic 1 -->
-            <div class="gallery-item">
-              <a href="#" class="video-card">
-                <img
-                  src="assets/images/videography/cinematic/cinematic-01.jpg"
-                  alt="Golden Hour Story"
-                />
-
-                <div class="video-overlay">
-                  <div class="play-button">▶</div>
-
-                  <span class="video-duration"> 2:45 </span>
-
-                  <div class="gallery-overlay">
-                    <span>Cinematic</span>
-
-                    <h3>Golden Hour Story</h3>
-
-                    <div class="watch-btn">Watch Project →</div>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            <!-- Cinematic 2 -->
-            <div class="gallery-item">
-              <img
-                src="assets/images/videography/cinematic/cinematic-02.jpg"
-                alt="Short Film Production"
-              />
-
-              <div class="gallery-overlay">
-                <span>Cinematic</span>
-
-                <h3>Urban Visual Story</h3>
-
-                <div class="watch-btn">Watch Project →</div>
-              </div>
-            </div>
-
-            <!-- Cinematic 3 -->
-            <div class="gallery-item">
-              <img
-                src="assets/images/videography/cinematic/cinematic-03.jpg"
-                alt="Creative Cinematic Scene"
-              />
-
-              <div class="gallery-overlay">
-                <span>Cinematic</span>
-
-                <h3>Creative Film Sequence</h3>
-
-                <div class="watch-btn">Watch Project →</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- =========================
-DRONE VIDEOGRAPHY GALLERY
-========================= -->
-
-      <section id="drone-gallery" class="portfolio-gallery">
-        <div class="container">
-          <div class="section-header">
-            <p class="section-tag">DRONE VIDEOGRAPHY</p>
-
-            <h2>Stunning Aerial Perspectives</h2>
-
-            <p>
-              Capturing breathtaking aerial footage that showcases destinations,
-              architecture, landscapes and events from entirely new
-              perspectives.
-            </p>
-
-            <p class="gallery-hint">▶ Hover over a project to explore.</p>
-          </div>
-
-          <div class="gallery-grid">
-            <!-- Drone 1 -->
-            <div class="gallery-item">
-              <img
-                src="assets/images/videography/drone/drone-01.jpg"
-                alt="Drone Landscape Video"
-              />
-
-              <div class="gallery-overlay">
-                <span>Drone</span>
-
-                <h3>Mountain Landscape</h3>
-
-                <div class="watch-btn">Watch Project →</div>
-              </div>
-            </div>
-
-            <!-- Drone 2 -->
-            <div class="gallery-item">
-              <img
-                src="assets/images/videography/drone/drone-02.jpg"
-                alt="Drone City View"
-              />
-
-              <div class="gallery-overlay">
-                <span>Drone</span>
-
-                <h3>Coastal Flyover</h3>
-
-                <div class="watch-btn">Watch Project →</div>
-              </div>
-            </div>
-
-            <!-- Drone 3 -->
-            <div class="gallery-item">
-              <img
-                src="assets/images/videography/drone/drone-03.jpg"
-                alt="Drone Beach View"
-              />
-
-              <div class="gallery-overlay">
-                <span>Drone</span>
-
-                <h3>City Skyline</h3>
-
-                <div class="watch-btn">Watch Project →</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- =========================================
-        EVENTS GALLERY
-========================================= -->
-
-      <section id="events-gallery" class="portfolio-gallery">
-        <div class="container">
-          <div class="section-header">
-            <p class="section-tag">EVENT VIDEOGRAPHY</p>
-
-            <h2>Every Moment Beautifully Preserved</h2>
-
-            <p>
-              From weddings and corporate conferences to concerts and private
-              celebrations, we capture every moment with creativity, emotion and
-              cinematic storytelling.
-            </p>
-
-            <p class="gallery-hint">▶ Hover over a project to explore.</p>
-          </div>
-
-          <div class="gallery-grid">
-            <!-- Event 1 -->
-            <a
-              href="https://youtu.be/your-video"
-              target="_blank"
-              class="gallery-item video-card"
+          <!-- Video Placeholder 2 -->
+          <div
+            class="video-item"
+            style="
+              background: var(--bg-secondary);
+              border-radius: 18px;
+              border: 1px solid var(--border-color);
+              overflow: hidden;
+              transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+            "
+          >
+            <div
+              style="
+                width: 100%;
+                height: 280px;
+                background: linear-gradient(
+                  135deg,
+                  var(--ink-soft),
+                  var(--ink)
+                );
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: var(--text-secondary);
+              "
             >
-              <img
-                src="assets/images/videography/events/event-01.jpg"
-                alt="Wedding Videography"
-              />
-
-              <div class="video-overlay">
-                <div class="video-duration">3:45</div>
-
-                <div class="play-button">&#9658;</div>
-
-                <div class="gallery-overlay">
-                  <span>Event</span>
-
-                  <h3>Wedding Highlights</h3>
-
-                  <div class="watch-btn">Watch Project →</div>
-                </div>
+              <div style="font-size: 4rem; margin-bottom: 16px; opacity: 0.3">
+                <i class="fas fa-film"></i>
               </div>
-            </a>
-
-            <!-- Event 2 -->
-            <a href="#" class="gallery-item video-card">
-              <img
-                src="assets/images/videography/events/event-02.jpg"
-                alt="Corporate Event"
-              />
-
-              <div class="video-overlay">
-                <div class="video-duration">2:58</div>
-
-                <div class="play-button">&#9658;</div>
-
-                <div class="gallery-overlay">
-                  <span>Event</span>
-
-                  <h3>Corporate Conference</h3>
-
-                  <div class="watch-btn">Watch Project →</div>
-                </div>
+              <div
+                style="
+                  width: 80px;
+                  height: 80px;
+                  border-radius: 50%;
+                  border: 3px solid var(--accent);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.8rem;
+                  color: var(--accent);
+                "
+              >
+                <i class="fas fa-play"></i>
               </div>
-            </a>
+              <p
+                style="
+                  margin-top: 20px;
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 0.8rem;
+                  letter-spacing: 0.1em;
+                  color: var(--paper-faint);
+                "
+              >
+                COMING SOON
+              </p>
+            </div>
+            <div style="padding: 20px 24px">
+              <h3
+                style="
+                  font-family: &quot;Fraunces&quot;, serif;
+                  font-size: 1.1rem;
+                  font-weight: 500;
+                "
+              >
+                Cinematic Content
+              </h3>
+              <p
+                style="
+                  color: var(--text-secondary);
+                  margin: 6px 0 0;
+                  font-size: 0.9rem;
+                "
+              >
+                Cinematic storytelling that captures emotion and creates a
+                lasting impression.
+              </p>
+              <span
+                style="
+                  display: inline-block;
+                  background: var(--border-color);
+                  padding: 4px 12px;
+                  border-radius: 100px;
+                  font-size: 0.72rem;
+                  margin-top: 12px;
+                  color: var(--text-secondary);
+                "
+                >Coming Soon</span
+              >
+            </div>
+          </div>
 
-            <!-- Event 3 -->
-            <a href="#" class="gallery-item video-card">
-              <img
-                src="assets/images/videography/events/event-03.jpg"
-                alt="Concert Videography"
-              />
-
-              <div class="video-overlay">
-                <div class="video-duration">4:12</div>
-
-                <div class="play-button">&#9658;</div>
-
-                <div class="gallery-overlay">
-                  <span>Event</span>
-
-                  <h3>Live Concert Highlights</h3>
-
-                  <div class="watch-btn">Watch Project →</div>
-                </div>
+          <!-- Video Placeholder 3 -->
+          <div
+            class="video-item"
+            style="
+              background: var(--bg-secondary);
+              border-radius: 18px;
+              border: 1px solid var(--border-color);
+              overflow: hidden;
+              transition:
+                transform 0.3s,
+                box-shadow 0.3s;
+            "
+          >
+            <div
+              style="
+                width: 100%;
+                height: 280px;
+                background: linear-gradient(
+                  135deg,
+                  var(--ink-soft),
+                  var(--ink)
+                );
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: var(--text-secondary);
+              "
+            >
+              <div style="font-size: 4rem; margin-bottom: 16px; opacity: 0.3">
+                <i class="fas fa-drone"></i>
               </div>
-            </a>
+              <div
+                style="
+                  width: 80px;
+                  height: 80px;
+                  border-radius: 50%;
+                  border: 3px solid var(--accent);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.8rem;
+                  color: var(--accent);
+                "
+              >
+                <i class="fas fa-play"></i>
+              </div>
+              <p
+                style="
+                  margin-top: 20px;
+                  font-family: &quot;JetBrains Mono&quot;, monospace;
+                  font-size: 0.8rem;
+                  letter-spacing: 0.1em;
+                  color: var(--paper-faint);
+                "
+              >
+                COMING SOON
+              </p>
+            </div>
+            <div style="padding: 20px 24px">
+              <h3
+                style="
+                  font-family: &quot;Fraunces&quot;, serif;
+                  font-size: 1.1rem;
+                  font-weight: 500;
+                "
+              >
+                Drone Videography
+              </h3>
+              <p
+                style="
+                  color: var(--text-secondary);
+                  margin: 6px 0 0;
+                  font-size: 0.9rem;
+                "
+              >
+                Stunning drone footage for real estate, tourism, and large-scale
+                productions.
+              </p>
+              <span
+                style="
+                  display: inline-block;
+                  background: var(--border-color);
+                  padding: 4px 12px;
+                  border-radius: 100px;
+                  font-size: 0.72rem;
+                  margin-top: 12px;
+                  color: var(--text-secondary);
+                "
+                >Coming Soon</span
+              >
+            </div>
           </div>
         </div>
-      </section>
-      <!-- =========================================
-        PROMOTIONAL GALLERY
-========================================= -->
+      </div>
+    </section>
 
-      <section id="promotional-gallery" class="portfolio-gallery">
-        <div class="container">
-          <div class="section-header">
-            <p class="section-tag">PROMOTIONAL VIDEOS</p>
-
-            <h2>Videos That Inspire Action</h2>
-
-            <p>
-              We create engaging promotional videos that communicate your
-              message, strengthen your brand and connect with your audience
-              across every platform.
-            </p>
-
-            <p class="gallery-hint">▶ Hover over a project to explore.</p>
-          </div>
-
-          <div class="gallery-grid">
-            <!-- Promo 1 -->
-            <a href="#" class="gallery-item video-card">
-              <img
-                src="assets/images/videography/promotional/promo-01.jpg"
-                alt="Business Promotion"
-              />
-
-              <div class="video-overlay">
-                <div class="video-duration">1:54</div>
-
-                <div class="play-button">&#9658;</div>
-
-                <div class="gallery-overlay">
-                  <span>Promotion</span>
-
-                  <h3>Business Advertisement</h3>
-
-                  <div class="watch-btn">Watch Project →</div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Promo 2 -->
-            <a href="#" class="gallery-item video-card">
-              <img
-                src="assets/images/videography/promotional/promo-02.jpg"
-                alt="Product Promotion"
-              />
-
-              <div class="video-overlay">
-                <div class="video-duration">2:21</div>
-
-                <div class="play-button">&#9658;</div>
-
-                <div class="gallery-overlay">
-                  <span>Promotion</span>
-
-                  <h3>Product Campaign</h3>
-
-                  <div class="watch-btn">Watch Project →</div>
-                </div>
-              </div>
-            </a>
-
-            <!-- Promo 3 -->
-            <a href="#" class="gallery-item video-card">
-              <img
-                src="assets/images/videography/promotional/promo-03.jpg"
-                alt="Brand Promotion"
-              />
-
-              <div class="video-overlay">
-                <div class="video-duration">2:47</div>
-
-                <div class="play-button">&#9658;</div>
-
-                <div class="gallery-overlay">
-                  <span>Promotion</span>
-
-                  <h3>Brand Story</h3>
-
-                  <div class="watch-btn">Watch Project →</div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- ==================================
-     IMAGE LIGHTBOX
-================================== -->
-
-    <div id="lightbox">
-      <span id="lightbox-close">&times;</span>
-
-      <img id="lightbox-image" src="" alt="Portfolio Image" />
-    </div>
-    <footer></footer>
+    <!-- ============================================================
+    CTA SECTION
+    ============================================================ -->
+    <section
+      style="
+        padding: 80px 0;
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border-color);
+      "
+    >
+      <div class="container" style="text-align: center">
+        <p class="eyebrow" style="justify-content: center">Need a Video?</p>
+        <h2
+          style="
+            font-family: &quot;Fraunces&quot;, serif;
+            font-weight: 340;
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            margin: 16px 0 24px;
+          "
+        >
+          Let's tell your story
+          <em style="color: var(--accent); font-style: italic"
+            >through film.</em
+          >
+        </h2>
+        <a href="index.html#contact" class="btn btn-primary"
+          >Start Your Project <i class="fas fa-arrow-right"></i
+        ></a>
+      </div>
+    </section>
 
     <script src="js/script.js"></script>
   </body>
