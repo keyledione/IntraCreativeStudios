@@ -78,6 +78,7 @@
 
     <section id="hero">
       <div class="mesh"><span></span><span></span><span></span></div>
+      <div class="camera-bg"></div>
       <div class="grain"></div>
       <div class="container hero-inner">
         <p class="eyebrow hero-eyebrow">Creative Visual Studio &mdash; Kenya</p>
@@ -467,14 +468,26 @@
           </div>
           <div class="form-row">
             <div class="field">
-              <input type="text" id="name" placeholder=" " required />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder=" "
+                required
+              />
               <label for="name">Your Name</label>
               <span class="error-msg" id="nameError"
                 >Please enter your name</span
               >
             </div>
             <div class="field">
-              <input type="email" id="email" placeholder=" " required />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder=" "
+                required
+              />
               <label for="email">Email Address</label>
               <span class="error-msg" id="emailError"
                 >Please enter a valid email</span
@@ -482,7 +495,7 @@
             </div>
           </div>
           <div class="field">
-            <select id="service" required>
+            <select id="service" name="service" required>
               <option value="" disabled selected hidden></option>
               <option value="branding">Brand Identity</option>
               <option value="graphic-design">Graphic Design</option>
@@ -495,7 +508,12 @@
             >
           </div>
           <div class="field">
-            <textarea id="message" placeholder=" " required></textarea>
+            <textarea
+              id="message"
+              name="message"
+              placeholder=" "
+              required
+            ></textarea>
             <label for="message">Message</label>
             <span class="error-msg" id="messageError"
               >Please enter a message</span

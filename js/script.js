@@ -209,24 +209,29 @@
   });
 
   // ============================================================
-  // 6. CONTACT FORM VALIDATION
+  // 6. CONTACT FORM VALIDATION + FORMSPREE SUBMISSION
   // ============================================================
   function validateField(input, errorId, condition) {
     const errorEl = document.getElementById(errorId);
+
     if (!condition) {
       input.classList.add("error");
       input.classList.remove("success");
+
       if (errorEl) errorEl.classList.add("show");
+
       return false;
     } else {
       input.classList.remove("error");
       input.classList.add("success");
+
       if (errorEl) errorEl.classList.remove("show");
+
       return true;
     }
   }
 
-  contactForm?.addEventListener("submit", function (e) {
+  contactForm?.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name");
@@ -238,33 +243,63 @@
       "nameError",
       name.value.trim().length >= 2,
     );
+
     const emailValid = validateField(
       email,
       "emailError",
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()),
     );
+
     const msgValid = validateField(
       message,
       "messageError",
       message.value.trim().length >= 10,
     );
 
-    if (nameValid && emailValid && msgValid) {
-      const success = document.getElementById("form-success");
-      if (success) {
-        success.classList.add("show");
+    // Stop if validation fails
+    if (!nameValid || !emailValid || !msgValid) {
+      return;
+    }
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: new FormData(contactForm),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        const success = document.getElementById("form-success");
+
+        if (success) {
+          success.classList.add("show");
+        }
+
         contactForm.reset();
-        // Remove success class from fields
+
         document
-          .querySelectorAll(".field input, .field textarea")
+          .querySelectorAll(".field input, .field textarea, .field select")
           .forEach(function (el) {
             el.classList.remove("success", "error");
           });
-        // Hide success after 5 seconds
+
+        // Hide success message after 5 seconds
         setTimeout(function () {
-          success.classList.remove("show");
+          if (success) {
+            success.classList.remove("show");
+          }
         }, 5000);
+      } else {
+        alert("Sorry, your message could not be sent. Please try again.");
       }
+    } catch (error) {
+      console.error("Form submission error:", error);
+
+      alert(
+        "Something went wrong while sending your message. Please try again.",
+      );
     }
   });
 
@@ -274,6 +309,7 @@
     .forEach(function (field) {
       field.addEventListener("blur", function () {
         const id = this.id;
+
         if (id === "name") {
           validateField(this, "nameError", this.value.trim().length >= 2);
         } else if (id === "email") {
